@@ -11,5 +11,5 @@ defmodule CalendlexWeb.Live.InitAssigns do
       |> assign(:time_zone, time_zone)
 
     {:cont, socket}
-  end
+ end
 end

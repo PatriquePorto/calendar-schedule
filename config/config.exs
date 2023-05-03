@@ -10,7 +10,10 @@ import Config
 config :calendlex,
   # ...
   owner: %{
-    name: "Patrique"
+    name: "Patrique",
+    time_zone: "America/Bahia",
+    day_start: 1,
+    day_end: 19
   }
 
 config :calendlex,
