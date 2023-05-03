@@ -12,8 +12,8 @@ config :calendlex,
   owner: %{
     name: "Patrique",
     time_zone: "America/Bahia",
-    day_start: 1,
-    day_end: 19
+    day_start: 8,
+    day_end: 18
   }
 
 config :calendlex,
