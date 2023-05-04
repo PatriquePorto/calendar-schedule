@@ -2,6 +2,7 @@
 // Remove this line if you add a your own CSS build pipeline (e.g postcss).
 import "../css/app.css"
 import Alpine from "alpinejs"
+import Hooks from "./hooks"
 
 window.Alpine = Alpine
 Alpine.start()
@@ -31,6 +32,7 @@ import topbar from "../vendor/topbar"
 
 let csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content")
 let liveSocket = new LiveSocket("/live", Socket, {
+    hooks: Hooks,
     params: {
     _csrf_token: csrfToken,
     timezone: Intl.DateTimeFormat().resolvedOptions().timezone,

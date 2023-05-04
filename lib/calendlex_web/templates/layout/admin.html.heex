@@ -1,0 +1,15 @@
+<main role="main" class="flex flex-col flex-1">
+   <div class="bg-gray-400">
+       <header class="container w-3/5 pt-12 mx-auto">
+           <h1 class="mb-3 text-2xl font-medium text-gray-100">My Calendar</h1>
+           <nav class="flex gap-x-6">
+              <%= live_redirect to: Routes.live_path(@socket, CalendlexWeb.Admin.EventTypesLive), class: admin_nav_link_classes(@section == "event_types") do %> 
+                Event types
+              <% end %>
+           </nav>
+       </header>
+   </div>
+   <section class="container flex-1 w-3/5 py-12 mx-auto">
+       <%= @inner_content %>
+   </section>
+</main>

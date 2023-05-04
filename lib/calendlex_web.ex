@@ -50,6 +50,18 @@ defmodule CalendlexWeb do
       unquote(view_helpers())
     end
   end
+  #Admion macro
+  def admin_live_view do
+    quote do
+      use Phoenix.LiveView,
+         layout: {CalendlexWeb.LayoutView, "admin.html"}
+      import CalendlexWeb.LiveViewHelpers
+
+      alias Phoenix.LiveView
+
+      unquote(view_helpers())
+    end
+  end
 
   def live_component do
     quote do

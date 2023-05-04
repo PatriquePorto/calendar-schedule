@@ -14,7 +14,9 @@ config :calendlex,
     time_zone: "America/Bahia",
     day_start: 8,
     day_end: 18
-  }
+  },
+
+  basic_auth: [username: "admin", password: "admin"]
 
 config :calendlex,
   ecto_repos: [Calendlex.Repo]

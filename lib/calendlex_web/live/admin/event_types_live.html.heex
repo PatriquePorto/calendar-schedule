@@ -1,0 +1,21 @@
+<div class="flex mt-4 align-middle gap-x-6">
+   <div class="flex-1"></div>
+   <div class="flex-1 text-right">
+       <div class="inline-block border border-blue-500 rounded-full px-4 py-1 text-blue-500 hover:bg-blue-100 cursor-pointer">
+           <i class="fas fa-plus"></i> New event type
+       </div>
+   </div>
+</div>
+
+<%= if @event_types_count > 0 do %>
+  <div class="mt-4 grid grid-cols-3 gap-6">
+    <%= for event_type <- @event_types do %>
+      <.live_component module={CalendlexWeb.Admin.Components.EventType} id={"event_type_" <> event_type.id} event_type={event_type} />
+    <% end %>
+  </div>
+<% else %>
+  <div class="mt-4">
+    <h3 class="mb-2 text-xl">You don't have any event types yet.</h3>
+    <p class="">You'll want to add an event type to allow people to schedule with you.</p>
+  </div>
+<% end %>

@@ -11,5 +11,11 @@ defmodule CalendlexWeb.Live.InitAssigns do
       |> assign(:time_zone, time_zone)
 
     {:cont, socket}
- end
+  end
+
+  def on_mount(:private, _params, _session, socket) do
+    owner = Application.get_env(:calendlex, :owner)
+
+    {:cont, assign(socket, :owner, owner)}
+  end
 end
