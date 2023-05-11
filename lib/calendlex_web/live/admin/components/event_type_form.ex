@@ -13,15 +13,15 @@ defmodule CalendlexWeb.Admin.Components.EventTypeForm do
     },
     socket
   ) do
-    socket =
-      socket
-      |> assign(changeset: changeset)
-      |> assign(event_type: event_type)
-      |> assign(current_color: current_color)
-      |> assign(public_url: build_public_url(socket, slug))
+socket =
+  socket
+  |> assign(changeset: changeset)
+  |> assign(event_type: event_type)
+  |> assign(current_color: current_color)
+  |> assign(public_url: build_public_url(socket, slug))
 
-    {:ok, socket}
-  end
+{:ok, socket}
+end
 
   def handle_event(
     "change",

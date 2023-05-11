@@ -40,4 +40,11 @@ defmodule Calendlex.EventType.Repo do
         {:ok, event_type}
     end
   end
+
+  def clone(%EventType{name: name, slug: slug} =  event_type) do
+    event_type
+    |> Map.from_struct()
+    |> Map.put(:name, "{name} (clone)")
+    |> insert()
+  end
 end

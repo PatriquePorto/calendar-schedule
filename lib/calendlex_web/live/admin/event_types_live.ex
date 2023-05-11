@@ -19,4 +19,9 @@ defmodule CalendlexWeb.Admin.EventTypesLive do
 
     {:noreply, socket}
   end
+
+  def handle_info(:clone_error, socket) do
+    {:noreply, put_flash(socket, :error, "A similar event type already exists")}
+  end
+
 end
