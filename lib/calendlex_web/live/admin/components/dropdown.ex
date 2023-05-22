@@ -5,19 +5,19 @@ defmodule CalendlexWeb.Admin.Components.Dropdown do
 
   def main(assigns) do
     ~H"""
+    <div
+      id={@id}
+      class="relative dropdown"
+      phx-click-away={click_away(@id)}>
       <div
-        id={@id}
-        class="relative dropdown"
-        phx-click-away={click_away(@id)}>
-        <div
-           class="flex items-baseline cursor-pointer gap-x-1 dropdown-trigger"
-           phx-click={trigger_click(@id)}>
-           <%= render_slot(@trigger) %>
-        </div>
-        <div class="absolute right-0 z-20 flex flex-col hidden py-2 mt-2 overflow-hidden text-sm text-gray-800 bg-white border shadow-md rounded-md dropdown-content">
-        <%= render_slot(@inner_block) %>
-        </div>
+        class="flex items-baseline cursor-pointer gap-x-1 dropdown-trigger"
+        phx-click={trigger_click(@id)}>
+        <%= render_slot(@trigger) %>
       </div>
+      <div class="absolute right-0 z-20 flex flex-col hidden py-2 mt-2 overflow-hidden text-sm text-gray-800 bg-white border shadow-md rounded-md dropdown-content">
+        <%= render_slot(@inner_block) %>
+      </div>
+    </div>
     """
   end
 

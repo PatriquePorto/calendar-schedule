@@ -22,4 +22,12 @@ defmodule CalendlexWeb.Admin.Components.EventType do
        {:noreply, socket}
     end
   end
+
+  def handle_event("delete_me", _params, socket) do
+    event_type = socket.assigns.event_type
+
+    send(self(), {:confirm_delete, event_type})
+
+   {:noreply, socket}
+  end
 end

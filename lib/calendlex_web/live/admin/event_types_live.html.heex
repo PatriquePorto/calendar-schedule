@@ -19,3 +19,13 @@
     <p class="">You'll want to add an event type to allow people to schedule with you.</p>
   </div>
 <% end %>
+<%= if @delete_event_type  do %>
+  <Modal.content>
+    <:header>Delete <%= @delete_event_type.name %></:header>
+    <p>Users will be unable to schedule further meetings with deleted event types. Meetings previously scheduled will not be affected.</p>
+    <:footer>
+      <Modal.cancel_button>No</Modal.cancel_button>
+      <Modal.confirm_button event="delete">Yes</Modal.confirm_button>
+    </:footer>
+  </Modal.content>
+<% end %>
