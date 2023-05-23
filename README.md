@@ -22,7 +22,7 @@ To start your Phoenix server:
   
   * Install dependencies with `mix deps.get`
   * Install assets with `cd ./assets && npm install`
-  * Run seeds `mix run priv/repo/seeds.exs`
+  * Run seeds with `mix run priv/repo/seeds.exs`
   * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
   * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
 
