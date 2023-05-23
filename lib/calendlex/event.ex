@@ -9,6 +9,7 @@ defmodule Calendlex.Event do
   @foreign_key_type :binary_id
 
   schema "events" do
+    field :cancelled_at, :utc_datetime
     field :comments, :string
     field :email, :string
     field :end_at, :utc_datetime
@@ -30,4 +31,11 @@ defmodule Calendlex.Event do
     |> cast(attrs, @fields)
     |> validate_required(@required_fields)
   end
+
+  def is_upcoming(%Event{start_at: start_at}) do
+    DateTime.compare(start_at, DateTime.utc_now()) == :gt
+  end
+
+  def is_active(%Event{cancelled_at: nil}), do: true
+  def is_active(_), do: false
 end

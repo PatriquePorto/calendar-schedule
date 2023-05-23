@@ -1,6 +1,7 @@
-alias Calendlex.{EventType, Repo}
+alias Calendlex.{Event, EventType, Repo}
 
 Repo.delete_all(EventType)
+Repo.delete_all(Event)
 
 event_types = [
   %{

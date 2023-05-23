@@ -27,6 +27,7 @@ defmodule CalendlexWeb.Router do
       live "/", EventTypesLive
       live "/event_types/new", NewEventTypeLive
       live "/event_types/:id", EditEventTypeLive
+      live "/scheduled_events", ScheduledEventsLive
     end
   end
 

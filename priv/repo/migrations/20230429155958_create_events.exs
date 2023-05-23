@@ -10,6 +10,7 @@ defmodule Calendlex.Repo.Migrations.CreateEvents do
       add :email, :string, null: false
       add :time_zone, :string, null: false
       add :comments, :text
+      add :cancelled_at, :utc_datetime
 
       add :event_type_id, references(:event_types, on_delete: :nothing, type: :binary_id),
         null: false

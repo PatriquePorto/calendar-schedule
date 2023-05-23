@@ -8,7 +8,8 @@
 import Config
 
 config :calendlex,
-  # ...
+  ecto_repos: [Calendlex.Repo],
+  generators: [binary_id: true],
   owner: %{
     name: "Patrique",
     time_zone: "America/Bahia",

@@ -3,6 +3,7 @@ defmodule Calendlex.EventType do
   import Ecto.Changeset
 
   alias Ecto.Changeset
+
   alias __MODULE__
 
   @primary_key {:id, :binary_id, autogenerate: true}

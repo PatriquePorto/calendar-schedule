@@ -3,9 +3,15 @@
        <header class="container w-3/5 pt-12 mx-auto">
            <h1 class="mb-3 text-2xl font-medium text-gray-100">My Calendar</h1>
            <nav class="flex gap-x-6">
+            <!--Route render to Event types -->
               <%= live_redirect to: Routes.live_path(@socket, CalendlexWeb.Admin.EventTypesLive), class: admin_nav_link_classes(@section == "event_types") do %> 
                 Event types
               <% end %>
+              <!--Route render to  Scheduled events -->
+              <%= live_redirect to: Routes.live_path(@socket, CalendlexWeb.Admin.ScheduledEventsLive), class: admin_nav_link_classes(@section == "scheduled_events") do %>
+                Scheduled events
+             <% end %>
+              
            </nav>
        </header>
    </div>

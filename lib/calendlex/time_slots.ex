@@ -10,7 +10,7 @@ defmodule Calendlex.TimeSlots do
 
     to = Timex.set(from, hour: day_end())
 
-    date_events = EventRepo.get_by_start_date(date)
+    date_events = EventRepo.active_by_date(date)
 
     from
     |> Stream.iterate(&DateTime.add(&1, duration * 60, :second))

@@ -22,7 +22,6 @@ defmodule CalendlexWeb do
       use Phoenix.Controller, namespace: CalendlexWeb
 
       import Plug.Conn
-      import CalendlexWeb.Gettext
       alias CalendlexWeb.Router.Helpers, as: Routes
     end
   end
@@ -47,6 +46,10 @@ defmodule CalendlexWeb do
       use Phoenix.LiveView,
         layout: {CalendlexWeb.LayoutView, "live.html"}
 
+        import CalendlexWeb.LiveViewHelpers
+
+        alias Phoenix.LiveView
+
       unquote(view_helpers())
     end
   end
@@ -55,6 +58,7 @@ defmodule CalendlexWeb do
     quote do
       use Phoenix.LiveView,
          layout: {CalendlexWeb.LayoutView, "admin.html"}
+
       import CalendlexWeb.LiveViewHelpers
 
       alias Phoenix.LiveView
@@ -67,13 +71,9 @@ defmodule CalendlexWeb do
     quote do
       use Phoenix.LiveComponent
 
-      unquote(view_helpers())
-    end
-  end
+      import CalendlexWeb.LiveViewHelpers
 
-  def component do
-    quote do
-      use Phoenix.Component
+      alias Phoenix.LiveComponent
 
       unquote(view_helpers())
     end
@@ -108,7 +108,6 @@ defmodule CalendlexWeb do
       import Phoenix.View
 
       import CalendlexWeb.ErrorHelpers
-      import CalendlexWeb.Gettext
       alias CalendlexWeb.Router.Helpers, as: Routes
     end
   end

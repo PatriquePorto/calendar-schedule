@@ -50,7 +50,8 @@ defmodule Calendlex.MixProject do
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
       {:timex, "~> 3.7"},
-      {:slugify, "~> 1.3"}
+      {:slugify, "~> 1.3"},
+      {:credo, "~> 1.5"}
     ]
   end
 
